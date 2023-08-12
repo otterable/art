@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Soundscapes</title>
+    <title>Ermine.at - Kunst</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
     <style>
         body {
@@ -116,12 +116,14 @@
             }
         }
         
-        /* Desktop layout */
+                /* Desktop layout */
         @media (min-width: 769px) {
             .image-container {
-                width: 50%; /* Each image takes 50% width for two columns */
-                margin-right: 10px; /* Add some space between images */
-                float: left; /* Float images to the left for side-by-side display */
+                width: calc(50% - 20px); /* Each image takes 50% width for two columns, accounting for margins */
+                margin: 10px;
+                display: inline-block; /* Display images inline */
+                vertical-align: top;
+                text-align: center;
             }
         }
     </style>
@@ -156,7 +158,8 @@
 
     <div id="content">
         <div id="all-art">
-            <h2>Self-created Artwork, in various categories.</h2>
+            <h2>I draw graphite art and create highly stylized transit maps.</h2> 
+			<h2>My artstyle incorporates railway themes (every picture features nets of rail tracks to some extent), and some blend of industrial fantasy and leaves.</h2>
             <div id="filter-categories">
                 <div class="button-container">
                     {% for category in art_categories %}
