@@ -14,6 +14,11 @@
             color: white;
             font-family: Arial, sans-serif;
         }
+		.button:hover {
+    transform: scale(1.02); /* Scales up the button */
+    background-color: lighten(currentColor, 10%); /* Lightens the background color */
+}
+
 
         .logo-container {
             text-align: center;
@@ -160,34 +165,28 @@
 	}
     </style>
 	
-    <script>
-	document.addEventListener('DOMContentLoaded', function() {
+<script>
+document.addEventListener('DOMContentLoaded', function() {
     var buttons = document.querySelectorAll('.button');
     var buttonColors = ['button-color-1', 'button-color-2', 'button-color-3', 'button-color-4', 'button-color-5', 'button-color-6', 'button-color-7', 'button-color-8'];
 
-    // Shuffle the button colors array randomly
-    buttonColors.sort(function() {
-        return 0.5 - Math.random();
-    });
-
-    // Apply colors from the shuffled array to each button
     buttons.forEach(function(button, index) {
-        button.classList.add(buttonColors[index]);
+        // Assign a unique color to each button by cycling through the buttonColors array
+        var colorIndex = index % buttonColors.length; // Use modulo to loop back to start of array
+        button.classList.add(buttonColors[colorIndex]);
     });
 });
-    </script>
+</script>
+
 	
 
 </head>
 <body>
-    <video id="video-background" autoplay muted loop>
-        <source src="{{ url_for('static', filename='video.mp4') }}" type="video/mp4">
-        Your browser does not support the video tag.
-    </video>
+    
     
     <div id="header">
     <div class="logo-container">
-        <a href="https://art.ermine.at" target="_blank"> <!-- Add anchor tag for the logo -->
+        <a href="https://ermine.at" target="_blank"> <!-- Add anchor tag for the logo -->
             <img class="logo" src="{{ url_for('static', filename='logo.png') }}" alt="Logo">
         </a>
     </div>
