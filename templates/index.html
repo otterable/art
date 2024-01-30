@@ -184,32 +184,13 @@ document.addEventListener('DOMContentLoaded', function() {
 <body>
     
     
-    <div id="header">
-    <div class="logo-container">
-        <a href="https://ermine.at" target="_blank"> <!-- Add anchor tag for the logo -->
-            <img class="logo" src="{{ url_for('static', filename='logo.png') }}" alt="Logo">
-        </a>
-    </div>
-</div>
+
 
 
     <div id="content">
         <div id="all-art">
-				<div class="list-field" id="listField">
-            <h2>I draw graphite art and create highly stylized public transport maps.</h2> 
-			<h2>My artstyle incorporates railway themes (every picture contains networks of tracks) and a mix of industrial fantasy and leaves.</h2>
-			</div>
-            <div id="filter-categories">
-                <div class="button-container">
-                    {% for category in art_categories %}
-                        <a class="button" href="/art/{{ category }}/">{{ category }}</a>
-
-                    {% endfor %}
-					                    <a class="button button-color-4" href="https://displate.com/ermine" target="_blank">Graphite art on Displate</a>
-
-<a id="filter-remove-button" class="button button-color-9" href="https://displate.com/ermine" target="_blank" style="display: none;">Filter entfernen</a>
-                </div>
-            </div>
+		
+    
 			
 			<div class="button-container">
                 {% for image in images %}
